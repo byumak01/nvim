@@ -1,5 +1,5 @@
 -- Set <space> as the leader key
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+--  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)ini
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
@@ -10,7 +10,6 @@ vim.g.have_nerd_font = true
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
-vim.opt.tabstop = 4
 -- Make line numbers default
 vim.opt.relativenumber = true
 vim.opt.number = true
@@ -113,9 +112,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   'tpope/vim-sleuth',
-  'blazkowolf/gruber-darker.nvim',
   'numToStr/FTerm.nvim',
-
+  'projekt0n/github-nvim-theme',
   -- Other plugins:
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
@@ -743,7 +741,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'gruber-darker'
+      vim.cmd.colorscheme 'github_dark'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -857,3 +855,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=8 sts=2 sw=2 et
+
+vim.opt.tabstop = 4
