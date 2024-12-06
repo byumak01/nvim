@@ -277,11 +277,13 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          initial_mode = 'normal',
+          mappings = {
+            i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+          },
+          n = {},
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
@@ -513,6 +515,7 @@ require('lazy').setup({
         jdtls = {},
         pyright = {},
         verible = {},
+        texlab = {},
         -- gopls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -794,7 +797,7 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {'latex', 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -857,3 +860,13 @@ require('lazy').setup({
 -- vim: ts=8 sts=2 sw=2 et
 
 vim.opt.tabstop = 4
+
+vim.api.nvim_set_keymap('n', '<leader>nt', ':tabedit ', { noremap = true, silent = false })
+vim.api.nvim_set_keymap('n', '<leader>1', ':tabn 1<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>2', ':tabn 2<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>3', ':tabn 3<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>4', ':tabn 4<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>5', ':tabn 5<CR>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>hs', ':split<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>vs', ':vsplit<CR>', { noremap = true, silent = true })
