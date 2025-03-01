@@ -1,4 +1,5 @@
 -- General Settings
+vim.cmd("language en_US")
 vim.o.number = true -- Show line numbers
 vim.o.relativenumber = true -- Relative line numbers
 vim.o.mouse = 'a' -- Enable mouse support

@@ -18,6 +18,7 @@ require('lazy').setup({
   { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy search
   { 'nvim-telescope/telescope-ui-select.nvim' }, -- Better UI for Telescope LSP
   { 'nvim-lualine/lualine.nvim' }, -- Status line
+  {'nvim-pack/nvim-spectre', dependencies = { 'nvim-lua/plenary.nvim' }}, -- String Replacement
   { 'EdenEast/nightfox.nvim' }, -- Theme
 
   -- Debugging
