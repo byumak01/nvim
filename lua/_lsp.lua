@@ -26,10 +26,10 @@ for _, lsp in ipairs(servers) do
   }
 end
 
-lspconfig.clangd.setup {
-  capabilities = capabilities,
-  cmd = { "clangd", "--fallback-style=Google" }, -- Change style to Google (or another)
-}
+--lspconfig.clangd.setup {
+--  capabilities = capabilities,
+--  cmd = { "clangd", "--fallback-style=none" }, -- Change style to Google (or another)
+--}
 
 -- LSP Keybindings
 vim.api.nvim_set_keymap('n', 'gd', '<cmd>Telescope lsp_definitions<CR>', { noremap = true, silent = true })

@@ -13,8 +13,21 @@ require('telescope').setup {
     preview = {
       hide_on_startup = false,
     },
+    file_ignore_patterns = {
+      "^.git/",    -- Ignore .git directory
+      "^.vscode/", -- Ignore .vscode directory
+      "^.idea/",   -- Ignore .idea directory
+    },
   },
   pickers = {
+    find_files = {
+      hidden = true,    -- Show hidden files
+      follow = true,    -- Follow symbolic links
+      previewer = true, -- Enable file preview
+    },
+    live_grep = {
+      hidden = true, -- Show hidden files
+    },
     lsp_definitions = { theme = "ivy", previewer = true },
     lsp_references = { theme = "ivy", previewer = true },
   },
@@ -24,5 +37,6 @@ require('telescope').setup {
     }
   }
 }
+
 require('telescope').load_extension('ui-select')
 
