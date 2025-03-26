@@ -37,5 +37,12 @@ vim.api.nvim_set_keymap('n', 'gr', '<cmd>Telescope lsp_references<CR>', { norema
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<Leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 
+vim.diagnostic.config({
+    virtual_text = false,  -- No inline error messages
+    underline = true,     -- No underlines for errors
+    signs = true,          -- Keep signs in the sign column (optional)
+    update_in_insert = false,
+})
+
 -- Auto-formatting on Save
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

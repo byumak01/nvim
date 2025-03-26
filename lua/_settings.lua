@@ -18,6 +18,8 @@ vim.o.softtabstop = 2 -- Number of spaces for <Tab> in insert mode
 vim.o.cursorline = true -- Highlight the current line
 vim.o.signcolumn = "yes" -- Always show sign column
 vim.o.scrolloff = 8 -- Keep 8 lines visible when scrolling
+vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
+
 
 -- Performance
 vim.o.updatetime = 250 -- Faster updates (affects CursorHold events)
