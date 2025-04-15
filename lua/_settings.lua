@@ -6,7 +6,7 @@ vim.o.ignorecase = true -- Case-insensitive search
 vim.o.smartcase = true -- Case-sensitive if uppercase present
 vim.o.termguicolors = true -- Enable true colors
 vim.o.clipboard = "unnamedplus" -- Use system clipboard
-vim.cmd([[colorscheme nightfox]]) -- Set nightfox theme
+vim.cmd([[colorscheme gruvbox]]) -- Set nightfox theme
 
 -- Tab Settings
 vim.o.expandtab = true -- Convert tabs to spaces

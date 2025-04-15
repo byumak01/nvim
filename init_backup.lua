@@ -10,6 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   { 'neovim/nvim-lspconfig' },  -- LSP configurations
+  { 'morhetz/gruvbox'},         -- Gruvbox theme
   { 'hrsh7th/nvim-cmp' },       -- Autocompletion
   { 'hrsh7th/cmp-nvim-lsp' },   -- LSP completion source
   { 'L3MON4D3/LuaSnip' },       -- Snippet support
@@ -28,7 +29,7 @@ vim.o.mouse = 'a' -- Enable mouse support
 vim.o.ignorecase = true -- Case-insensitive search
 vim.o.smartcase = true -- Case-sensitive if uppercase present
 vim.o.termguicolors = true -- Better color support
-vim.cmd([[colorscheme nightfox]]) -- Set nightfox theme
+vim.cmd([[colorscheme gruvbox]]) -- Set nightfox theme
 
 -- Tab settings
 vim.o.expandtab = true    -- Convert tabs to spaces
