@@ -4,6 +4,14 @@ vim.api.nvim_set_keymap('n', '<C-f>', ':Telescope live_grep<CR>', { noremap = tr
 vim.api.nvim_set_keymap('n', '<C-r>', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', { noremap = true, silent = true })
 
+-- System clipboard yank 
+vim.keymap.set({'n', 'v'}, '<leader>y', '"+y', { desc = 'Yank to system clipboard' })
+
+-- System clipboard paste
+vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard after cursor' })
+vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Paste from system clipboard before cursor' })
+vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Replace selection with system clipboard' })
+
 local function telescope_lsp_picker(picker)
   return function()
     require('telescope.builtin')[picker]({
@@ -15,14 +23,4 @@ end
 
 vim.keymap.set("n", "gd", telescope_lsp_picker("lsp_definitions"), { noremap = true, silent = true })
 vim.keymap.set("n", "fr", telescope_lsp_picker("lsp_references"), { noremap = true, silent = true })
-
--- Debugging Keybindings
-vim.api.nvim_set_keymap('n', '<F5>', '<Cmd>lua require("dap").continue()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F10>', '<Cmd>lua require("dap").step_over()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F11>', '<Cmd>lua require("dap").step_into()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<F12>', '<Cmd>lua require("dap").step_out()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>b', '<Cmd>lua require("dap").toggle_breakpoint()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>B', '<Cmd>lua require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>du', '<Cmd>lua require("dapui").toggle()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<Leader>de', '<Cmd>lua require("dapui").eval()<CR>', { noremap = true, silent = true })
 

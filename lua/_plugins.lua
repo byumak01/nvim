@@ -19,15 +19,7 @@ require('lazy').setup({
   { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy search
   { 'nvim-telescope/telescope-ui-select.nvim' }, -- Better UI for Telescope LSP
   { 'nvim-lualine/lualine.nvim' }, -- Status line
-  { 'EdenEast/nightfox.nvim' }, -- Theme
-  { "morhetz/gruvbox" }, 
+  { "Mofiqul/dracula.nvim" }
 
-  -- Debugging
-  { 'nvim-neotest/nvim-nio' },
-  { 'williamboman/mason.nvim',  build = ":MasonUpdate"}, -- Ensure Mason updates automatically
-  { 'mfussenegger/nvim-dap' },  -- Debug Adapter Protocol
-  { 'rcarriga/nvim-dap-ui' },   -- Debugging UI
-  { 'theHamsta/nvim-dap-virtual-text' }, -- Show variables inline
-  { 'jay-babu/mason-nvim-dap.nvim', dependencies = { "mason.nvim", "nvim-dap" } } -- Install Debuggers
 })
 

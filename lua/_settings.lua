@@ -1,12 +1,10 @@
 -- General Settings
 vim.o.number = true -- Show line numbers
-vim.o.relativenumber = true -- Relative line numbers
 vim.o.mouse = 'a' -- Enable mouse support
 vim.o.ignorecase = true -- Case-insensitive search
 vim.o.smartcase = true -- Case-sensitive if uppercase present
 vim.o.termguicolors = true -- Enable true colors
-vim.o.clipboard = "unnamedplus" -- Use system clipboard
-vim.cmd([[colorscheme gruvbox]]) -- Set nightfox theme
+vim.cmd([[colorscheme dracula]])
 
 -- Tab Settings
 vim.o.expandtab = true -- Convert tabs to spaces

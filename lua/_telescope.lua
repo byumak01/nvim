@@ -1,10 +1,10 @@
 require('telescope').setup {
   defaults = {
-    layout_strategy = "horizontal",
+    layout_strategy = "vertical",
     layout_config = {
-      width = 0.9,
-      height = 0.8,
-      preview_cutoff = 120,
+      width = 0.99,
+      height = 0.99,
+      preview_cutoff = 0,
     },
     sorting_strategy = "ascending",
     prompt_prefix = "🔍 ",
@@ -15,7 +15,7 @@ require('telescope').setup {
     },
     file_ignore_patterns = {
       "^.git/",    -- Ignore .git directory
-      "^.vscode/", -- Ignore .vscode directory
+--      "^.vscode/", -- Ignore .vscode directory
       "^.idea/",   -- Ignore .idea directory
     },
   },
