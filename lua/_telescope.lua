@@ -29,7 +29,16 @@ require('telescope').setup {
       hidden = true, -- Show hidden files
     },
     lsp_definitions = { theme = "ivy", previewer = true },
-    lsp_references = { theme = "ivy", previewer = true },
+    lsp_references = {  theme = "ivy", previewer = true,
+                        layout_strategy = 'vertical',
+                        layout_config = {
+                          vertical = {
+                                width = 0.99,
+                                height = 0.99,
+                                preview_height = 0.5,
+                          },
+                        },
+                    },
   },
   extensions = {
     ["ui-select"] = {
