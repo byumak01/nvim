@@ -33,9 +33,9 @@ vim.cmd([[colorscheme gruvbox]]) -- Set nightfox theme
 
 -- Tab settings
 vim.o.expandtab = true    -- Convert tabs to spaces
-vim.o.shiftwidth = 2      -- Number of spaces for each indent level
-vim.o.tabstop = 2         -- Number of spaces a tab counts for
-vim.o.softtabstop = 2     -- Number of spaces for <Tab> in insert mode
+vim.o.shiftwidth = 4      -- Number of spaces for each indent level
+vim.o.tabstop = 4         -- Number of spaces a tab counts for
+vim.o.softtabstop = 4     -- Number of spaces for <Tab> in insert mode
 
 -- 🟢 Telescope Configuration (Bigger Window & LSP Preview)
 require('telescope').setup {

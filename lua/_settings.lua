@@ -8,9 +8,9 @@ vim.cmd([[colorscheme dracula]])
 
 -- Tab Settings
 vim.o.expandtab = true -- Convert tabs to spaces
-vim.o.shiftwidth = 2 -- Number of spaces per indent level
-vim.o.tabstop = 2 -- Number of spaces a tab counts for
-vim.o.softtabstop = 2 -- Number of spaces for <Tab> in insert mode
+vim.o.shiftwidth = 4 -- Number of spaces per indent level
+vim.o.tabstop = 4 -- Number of spaces a tab counts for
+vim.o.softtabstop = 4 -- Number of spaces for <Tab> in insert mode
 
 -- UI Settings
 vim.o.cursorline = true -- Highlight the current line
@@ -23,3 +23,6 @@ vim.api.nvim_set_keymap('n', '<Leader>e', '<cmd>lua vim.diagnostic.open_float()<
 vim.o.updatetime = 250 -- Faster updates (affects CursorHold events)
 vim.o.timeoutlen = 300 -- Faster key sequences
 
+-- Status line configuration
+vim.opt.laststatus = 2
+vim.opt.statusline = '%F%m%r%h%w [FORMAT=%{&ff}] [TYPE=%Y] [POS=%l,%v][%p%%] %{strftime("%d/%m/%y - %H:%M")}'
