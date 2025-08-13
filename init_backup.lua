@@ -9,6 +9,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  { 'nyoom-engineering/oxocarbon.nvim'},
   { 'neovim/nvim-lspconfig' },  -- LSP configurations
   { 'morhetz/gruvbox'},         -- Gruvbox theme
   { 'hrsh7th/nvim-cmp' },       -- Autocompletion
@@ -89,7 +90,6 @@ vim.keymap.set("n", "fr", telescope_lsp_picker("lsp_references"), { noremap = tr
 local lspconfig = require('lspconfig')
 lspconfig.pyright.setup{} -- Python LSP
 lspconfig.clangd.setup{ -- C/C++ LSP
-  capabilities = require('cmp_nvim_lsp').default_capabilities()
 }
 
 -- Treesitter (Better Syntax Highlighting)

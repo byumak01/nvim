@@ -10,6 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- Core Features
+  { 'nyoom-engineering/oxocarbon.nvim'},
   { 'neovim/nvim-lspconfig' },  -- LSP configurations
   { 'hrsh7th/nvim-cmp' },       -- Autocompletion
   { 'hrsh7th/cmp-nvim-lsp' },   -- LSP completion source
