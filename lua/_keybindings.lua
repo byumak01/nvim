@@ -12,6 +12,17 @@ vim.keymap.set('n', '<leader>p', '"+p', { desc = 'Paste from system clipboard af
 vim.keymap.set('n', '<leader>P', '"+P', { desc = 'Paste from system clipboard before cursor' })
 vim.keymap.set('v', '<leader>p', '"+p', { desc = 'Replace selection with system clipboard' })
 
+-- AerialToggle
+-- Toggle aerial window
+vim.api.nvim_set_keymap('n', '<Leader>a', '<cmd>AerialToggle<CR>', { noremap = true, silent = true })
+
+-- Navigate to next/previous symbol
+vim.api.nvim_set_keymap('n', '<Leader>an', '<cmd>AerialNext<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<Leader>ap', '<cmd>AerialPrev<CR>', { noremap = true, silent = true })
+
+-- Open aerial in floating window
+vim.api.nvim_set_keymap('n', '<Leader>af', '<cmd>AerialOpen float<CR>', { noremap = true, silent = true })
+
 local function telescope_lsp_picker(picker)
   return function()
     require('telescope.builtin')[picker]({

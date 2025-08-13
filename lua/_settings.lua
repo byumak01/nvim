@@ -30,28 +30,19 @@ vim.o.timeoutlen = 300 -- Faster key sequences
 -- Status line configuration
 vim.opt.laststatus = 2
 
--- Status line
--- In your init.lua or plugins config
 require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {
       'filename',
-      -- Current function/method with aerial
+      -- Use aerial's built-in lualine component
       {
-        function()
-          if package.loaded['aerial'] then
-            local symbol = require('aerial').get_location(true)
-            return symbol and symbol.name or ''
-          end
-          return ''
-        end,
-        icon = '⚡',
-        color = { fg = '#61afef' },
-        cond = function()
-          return package.loaded['aerial'] and require('aerial').get_location(true) ~= nil
-        end
+        'aerial',
+        sep = ' > ',  -- Separator between nested symbols
+        depth = 1,    -- Only show current function (not nested)
+        dense = false, -- Show icon for each symbol
+        colored = true, -- Color the icons
       }
     },
     lualine_x = {
@@ -100,3 +91,42 @@ require('lualine').setup {
     lualine_z = {'location'}
   },
 }
+
+require('aerial').setup({
+  backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
+  
+  -- Enable for more file types
+  filter_kind = {
+    "Class",
+    "Constructor",
+    "Enum",
+    "Function",
+    "Interface",
+    "Module",
+    "Method",
+    "Struct",
+  },
+  
+  -- Better treesitter support
+  treesitter = {
+    update_delay = 300,
+  },
+  
+  -- Ensure it attaches to buffers
+  attach_mode = "window",
+  
+  -- Better layout
+  layout = {
+    min_width = 20,
+    default_direction = "prefer_right",
+  },
+  
+  show_guides = true,
+  guides = {
+    mid_item = "├─",
+    last_item = "└─",
+    nested_top = "│ ",
+    whitespace = "  ",
+  },
+})
+

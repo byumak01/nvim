@@ -10,7 +10,11 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   -- Core Features
-  { 'stevearc/aerial.nvim' },
+  { 'stevearc/aerial.nvim',
+      dependencies = {
+    'nvim-treesitter/nvim-treesitter',
+    'nvim-tree/nvim-web-devicons'
+  }},
   { 'nyoom-engineering/oxocarbon.nvim'},
   { 'neovim/nvim-lspconfig' },  -- LSP configurations
   { 'hrsh7th/nvim-cmp' },       -- Autocompletion
