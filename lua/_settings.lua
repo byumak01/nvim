@@ -36,8 +36,40 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
+    lualine_c = {
+      'filename',
+      -- Current function/method with aerial
+      {
+        function()
+          if package.loaded['aerial'] then
+            local symbol = require('aerial').get_location(true)
+            return symbol and symbol.name or ''
+          end
+          return ''
+        end,
+        icon = '⚡',
+        color = { fg = '#61afef' },
+        cond = function()
+          return package.loaded['aerial'] and require('aerial').get_location(true) ~= nil
+        end
+      }
+    },
     lualine_x = {
+      -- LSP clients
+      {
+        function()
+          local clients = vim.lsp.get_active_clients({ bufnr = 0 })
+          if #clients == 0 then return '' end
+          
+          local names = {}
+          for _, client in pairs(clients) do
+            table.insert(names, client.name)
+          end
+          return table.concat(names, ',')
+        end,
+        icon = '',
+        color = { fg = '#98be65' }
+      },
       -- Show current working directory
       {
         function()
