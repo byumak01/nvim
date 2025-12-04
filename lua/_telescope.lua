@@ -1,3 +1,4 @@
+require('telescope').load_extension('fzf')
 require('telescope').setup {
     defaults = {
         layout_strategy = "vertical",
@@ -24,7 +25,6 @@ require('telescope').setup {
             hidden = true,    -- Show hidden files
             follow = true,    -- Follow symbolic links
             previewer = true, -- Enable file preview
-            matcher = "substring",
         },
         live_grep = {
             hidden = true, -- Show hidden files

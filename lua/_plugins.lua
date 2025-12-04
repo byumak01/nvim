@@ -26,6 +26,7 @@ require('lazy').setup({
     { 'nvim-treesitter/nvim-treesitter',        build = ':TSUpdate' },             -- Syntax highlighting
     { 'nvim-tree/nvim-tree.lua',                dependencies = 'nvim-tree/nvim-web-devicons' }, -- File explorer
     { 'nvim-telescope/telescope.nvim',          dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy search
+    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
     { 'nvim-telescope/telescope-ui-select.nvim' },                                 -- Better UI for Telescope LSP
     { 'nvim-lualine/lualine.nvim' },                                               -- Status line
     { "Mofiqul/dracula.nvim" }
