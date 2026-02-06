@@ -9,26 +9,34 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-    -- Core Features
-    {
-        'stevearc/aerial.nvim',
-        dependencies = {
-            'nvim-treesitter/nvim-treesitter',
-            'nvim-tree/nvim-web-devicons'
-        }
-    },
-    { 'nyoom-engineering/oxocarbon.nvim' },
-    { 'lewis6991/gitsigns.nvim' },                                                 -- Git signs
-    { 'neovim/nvim-lspconfig' },                                                   -- LSP configurations
-    { 'hrsh7th/nvim-cmp' },                                                        -- Autocompletion
-    { 'hrsh7th/cmp-nvim-lsp' },                                                    -- LSP completion source
-    { 'L3MON4D3/LuaSnip' },                                                        -- Snippet support
-    { 'nvim-treesitter/nvim-treesitter',        build = ':TSUpdate' },             -- Syntax highlighting
-    { 'nvim-tree/nvim-tree.lua',                dependencies = 'nvim-tree/nvim-web-devicons' }, -- File explorer
-    { 'nvim-telescope/telescope.nvim',          dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy search
-    { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
-    { 'nvim-telescope/telescope-ui-select.nvim' },                                 -- Better UI for Telescope LSP
-    { 'nvim-lualine/lualine.nvim' },                                               -- Status line
-    { "Mofiqul/dracula.nvim" }
+        -- Core Features
+        {
+            'stevearc/aerial.nvim',
+            dependencies = {
+                'nvim-treesitter/nvim-treesitter',
+                'nvim-tree/nvim-web-devicons'
+            }
+        },
+        { 'nyoom-engineering/oxocarbon.nvim' },
+        { 'ya2s/nvim-cursorline' },
+        { 'Mofiqul/vscode.nvim' },
+        { 'lewis6991/gitsigns.nvim' },                                                          -- Git signs
+        { 'neovim/nvim-lspconfig' },                                                            -- LSP configurations
+        { 'hrsh7th/nvim-cmp' },                                                                 -- Autocompletion
+        { 'hrsh7th/cmp-nvim-lsp' },                                                             -- LSP completion source
+        { 'L3MON4D3/LuaSnip' },                                                                 -- Snippet support
+        { 'nvim-treesitter/nvim-treesitter',          build = ':TSUpdate' },                    -- Syntax highlighting
+        { 'nvim-tree/nvim-tree.lua',                  dependencies = 'nvim-tree/nvim-web-devicons' }, -- File explorer
+        { 'nvim-telescope/telescope.nvim',            dependencies = { 'nvim-lua/plenary.nvim' } }, -- Fuzzy search
+        { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+        { 'nvim-telescope/telescope-ui-select.nvim' },                                          -- Better UI for Telescope LSP
+        { 'nvim-lualine/lualine.nvim' },                                                        -- Status line
+        { "Mofiqul/dracula.nvim" }
 
-})
+    },
+    {
+        git = {
+            url_format = "git@github.com:%s.git"
+        }
+    }
+)

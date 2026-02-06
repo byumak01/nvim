@@ -1,4 +1,4 @@
-local lspconfig = require('lspconfig')
+local lspconfig = require('lspconfig') 
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- 1. Enable capabilities for autocompletion

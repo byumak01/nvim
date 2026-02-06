@@ -4,7 +4,7 @@ vim.o.mouse = 'a'          -- Enable mouse support
 vim.o.ignorecase = true    -- Case-insensitive search
 vim.o.smartcase = true     -- Case-sensitive if uppercase present
 vim.o.termguicolors = true -- Enable true colors
-vim.cmd([[colorscheme dracula-soft]])
+vim.cmd([[colorscheme vscode]])
 
 -- Tab Settings
 vim.o.expandtab = true -- Convert tabs to spaces

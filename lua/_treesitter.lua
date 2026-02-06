@@ -1,4 +1,4 @@
-require 'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.config'.setup {
     ensure_installed = { 'python', 'cpp', 'cmake', 'lua', 'yaml', 'json', 'html', 'css', 'javascript' },
     highlight = { enable = true },
     indent = { enable = true },
