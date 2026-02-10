@@ -1,37 +1,23 @@
-local lspconfig = require('lspconfig') 
 local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
 -- 1. Enable capabilities for autocompletion
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
--- 2. Mason Setup
-local mason_status, mason = pcall(require, "mason")
-if mason_status then
-    mason.setup()
-end
-
-local mason_lsp_status, mason_lspconfig = pcall(require, "mason-lspconfig")
-if mason_lsp_status then
-    mason_lspconfig.setup {
-        ensure_installed = { "pyright", "clangd", "ts_ls", "html", "cssls", "lua_ls" }
-    }
-end
-
 ---
--- 3. LSP Server Configuration
+-- 2. LSP Server Configuration (using new vim.lsp.config API)
 ---
 
 -- **A. Servers using only the default setup (plus capabilities)**
 local default_servers = { 'pyright', 'ts_ls', 'html', 'cssls', 'lua_ls' }
 
 for _, lsp in ipairs(default_servers) do
-    lspconfig[lsp].setup {
+    vim.lsp.config(lsp, {
         capabilities = capabilities,
-    }
+    })
 end
 
 -- **B. Servers requiring custom options (clangd)**
-lspconfig.clangd.setup({
+vim.lsp.config('clangd', {
     capabilities = capabilities,
     cmd = {
         "clangd",
@@ -67,6 +53,10 @@ lspconfig.clangd.setup({
         },
     },
 })
+
+-- Enable LSP servers
+vim.lsp.enable(default_servers)
+vim.lsp.enable('clangd')
 
 
 vim.api.nvim_create_user_command('Format', function(opts)

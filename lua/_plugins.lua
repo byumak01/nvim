@@ -21,7 +21,6 @@ require('lazy').setup({
         { 'ya2s/nvim-cursorline' },
         { 'Mofiqul/vscode.nvim' },
         { 'lewis6991/gitsigns.nvim' },                                                          -- Git signs
-        { 'neovim/nvim-lspconfig' },                                                            -- LSP configurations
         { 'hrsh7th/nvim-cmp' },                                                                 -- Autocompletion
         { 'hrsh7th/cmp-nvim-lsp' },                                                             -- LSP completion source
         { 'L3MON4D3/LuaSnip' },                                                                 -- Snippet support
