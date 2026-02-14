@@ -18,7 +18,21 @@ require('lazy').setup({
             }
         },
         { 'nyoom-engineering/oxocarbon.nvim' },
-        { 'ya2s/nvim-cursorline' },
+        {
+            'ya2s/nvim-cursorline',
+            opts = {
+                cursorline = {
+                    enable = true,
+                    timeout = 1000,
+                    number = false,
+                },
+                cursorword = {
+                    enable = true,
+                    min_length = 3,
+                    hl = { underline = true },
+                },
+            },
+        },
         { 'Mofiqul/vscode.nvim' },
         { 'lewis6991/gitsigns.nvim' },                                                          -- Git signs
         { 'hrsh7th/nvim-cmp' },                                                                 -- Autocompletion
@@ -30,7 +44,11 @@ require('lazy').setup({
         { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
         { 'nvim-telescope/telescope-ui-select.nvim' },                                          -- Better UI for Telescope LSP
         { 'nvim-lualine/lualine.nvim' },                                                        -- Status line
-        { "Mofiqul/dracula.nvim" }
+        { "Mofiqul/dracula.nvim" },
+        {
+            'christoomey/vim-tmux-navigator',
+            lazy = false,
+        },
 
     },
     {

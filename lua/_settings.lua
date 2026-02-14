@@ -4,7 +4,7 @@ vim.o.mouse = 'a'          -- Enable mouse support
 vim.o.ignorecase = true    -- Case-insensitive search
 vim.o.smartcase = true     -- Case-sensitive if uppercase present
 vim.o.termguicolors = true -- Enable true colors
-vim.cmd([[colorscheme vscode]])
+vim.cmd([[colorscheme minimal]])
 
 -- Tab Settings
 vim.o.expandtab = true -- Convert tabs to spaces
@@ -30,7 +30,7 @@ vim.opt.equalalways = true   -- Always keep windows equal size
 vim.opt.eadirection = 'both' -- Equalize in both directions
 
 -- Performance
-vim.o.updatetime = 250 -- Faster updates (affects CursorHold events)
+vim.o.updatetime = 50 -- Faster updates (affects CursorHold events)
 vim.o.timeoutlen = 300 -- Faster key sequences
 
 -- Status line configuration
@@ -42,13 +42,12 @@ require('lualine').setup {
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = {
             'filename',
-            -- Use aerial's built-in lualine component
             {
                 'aerial',
-                sep = ' > ', -- Separator between nested symbols
-                depth = 1, -- Only show current function (not nested)
-                dense = false, -- Show icon for each symbol
-                colored = true, -- Color the icons
+                sep = ' > ',
+                depth = 1,
+                dense = false,
+                colored = true,
             }
         },
         lualine_x = {
@@ -67,14 +66,12 @@ require('lualine').setup {
                 icon = '',
                 color = { fg = '#98be65' }
             },
-            -- Show current working directory
             {
                 function()
                     return vim.fn.fnamemodify(vim.fn.getcwd(), ':t')
                 end,
                 icon = '📁'
             },
-            -- Show word count (useful for writing)
             {
                 function()
                     return tostring(vim.fn.wordcount().words) .. ' words'
@@ -87,7 +84,6 @@ require('lualine').setup {
         },
         lualine_y = {
             'progress',
-            -- Show current time
             {
                 function()
                     return os.date('%H:%M')
@@ -101,7 +97,6 @@ require('lualine').setup {
 require('aerial').setup({
     backends = { "lsp", "treesitter", "markdown", "asciidoc", "man" },
 
-    -- Enable for more file types
     filter_kind = {
         "Class",
         "Constructor",
@@ -113,15 +108,12 @@ require('aerial').setup({
         "Struct",
     },
 
-    -- Better treesitter support
     treesitter = {
         update_delay = 300,
     },
 
-    -- Ensure it attaches to buffers
     attach_mode = "window",
 
-    -- Better layout
     layout = {
         min_width = 20,
         default_direction = "prefer_right",
